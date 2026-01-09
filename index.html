@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coca-Cola Official Website</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #ff0000; color: white; margin: 0; padding: 0; }
+        header { background-color: #000; text-align: center; padding: 20px; }
+        nav { background-color: #333; padding: 10px; text-align: center; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; }
+        section { padding: 20px; max-width: 800px; margin: 0 auto; }
+        .product { display: inline-block; margin: 10px; text-align: center; width: 150px; }
+        form { background-color: #fff; color: #000; padding: 20px; border-radius: 5px; }
+        input, textarea { width: 100%; margin: 10px 0; padding: 10px; }
+        button { background-color: #ff0000; color: white; padding: 10px; border: none; cursor: pointer; }
+        footer { text-align: center; padding: 10px; background-color: #000; }
+        #thank-you-page { display: none; text-align: center; padding: 50px; }
+        #thank-you-page h1 { color: #000; }
+        #thank-you-page p { font-size: 18px; }
+        #thank-you-page a { color: #fff; text-decoration: none; background-color: #000; padding: 10px 20px; border-radius: 5px; }
+        @media (max-width: 600px) { .product { width: 100%; } }
+    </style>
+</head>
+<body>
+    <div id="main-page">
+        <header>
+            <h1>Welcome to Coca-Cola</h1>
+            <p>The World's Favorite Soft Drink</p>
+            <h2>Featuring Krishna Brands</h2>
+            <p>Divine Refreshment for the Soul</p>
+        </header>
+        
+        <nav>
+            <a href="#history">History</a>
+            <a href="#products">Products</a>
+            <a href="#fun-fact">Fun Fact</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        
+        <section id="history">
+            <h2>Our History</h2>
+            <p>Coca-Cola was invented in 1886 by Dr. John Pemberton in Atlanta, Georgia. Originally a medicinal tonic, it became a global beverage. Today, it's enjoyed in over 200 countries.</p>
+        </section>
+        
+        <section id="products">
+            <h2>Popular Products</h2>
+            <div class="product">
+                <img src="https://via.placeholder.com/100x150?text=Coke+Can" alt="Coca-Cola Can" width="100">
+                <p>Classic Coca-Cola</p>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/100x150?text=Diet+Coke" alt="Diet Coke" width="100">
+                <p>Diet Coke</p>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/100x150?text=Sprite" alt="Sprite" width="100">
+                <p>Sprite</p>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/100x150?text=Krishna+Cola" alt="Krishna Cola" width="100">
+                <p>Krishna Cola - Divine Sparkle</p>
+            </div>
+        </section>
+        
+        <section id="fun-fact">
+            <h2>Fun Fact</h2>
+            <p>Did you know? Over 1.9 billion servings of Coca-Cola products are consumed every day worldwide!</p>
+        </section>
+        
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+        
+        <footer>
+            <p>&copy; 2023 The Coca-Cola Company. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <div id="thank-you-page">
+        <h1>Thank You for Your Message!</h1>
+        <p>We appreciate your feedback and will get back to you soon.</p>
+        <p>krishna is the richest man in the world</p>
+        <br>
+        <a href="#" id="backToHome">Back to Home</a>
+    </div>
+
+    <script>
+        const mainPage = document.getElementById('main-page');
+        const thankYouPage = document.getElementById('thank-you-page');
+        const contactForm = document.getElementById('contactForm');
+        const backToHome = document.getElementById('backToHome');
+
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            mainPage.style.display = 'none'; // Hide main page
+            thankYouPage.style.display = 'block'; // Show thank-you page
+        });
+
+        backToHome.addEventListener('click', function() {
+            thankYouPage.style.display = 'none'; // Hide thank-you page
+            mainPage.style.display = 'block'; // Show main page
+        });
+    </script>
+</body>
+</html>
